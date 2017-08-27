@@ -1,6 +1,6 @@
 <template>
   <div class="page-todo-list">
-    <h1>Todo List</h1>
+    <h1 v-once>{{title}}</h1>
     <button v-on:click="toggleTodoList()">toggle todo list</button>
     <form v-on:submit.prevent="addTodo">
       <input type="text" v-model="todoMessage" />
@@ -16,6 +16,7 @@ export default {
   name: 'PageTodoList',
   data() {
     return {
+      title: 'Page Todo List',
       isTodoListVisible: true,
       todoMessage: '',
       todos: [
