@@ -5,14 +5,15 @@
     <form v-on:submit.prevent="addTodo">
       <input type="text" v-model="todoMessage" />
     </form>
-    <ul v-show="isTodoListVisible">
-      <li v-for="todo in todos">{{todo.message | toUpperCase | lastLetterToLowerCase}}</li>
-    </ul>
+    <todo-list v-show="isTodoListVisible" v-model="todos"></todo-list>
   </div>
 </template>
 
 <script>
+import TodoList from '@/components/TodoList';
+
 export default {
+  components: {TodoList},
   name: 'PageTodoList',
   data() {
     return {
@@ -24,14 +25,6 @@ export default {
         {message: 'Bar'}
       ]
     };
-  },
-  filters: {
-    toUpperCase(value = '') {
-      return value.toUpperCase();
-    },
-    lastLetterToLowerCase(value = '') {
-      return value.slice(0, value.length - 2) + value.charAt(value.length - 1).toLowerCase();
-    }
   },
   methods: {
     addTodo() {
