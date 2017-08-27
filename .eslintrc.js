@@ -38,6 +38,9 @@ module.exports = {
     "comma-dangle": 0,
     "object-curly-spacing": 0,
     "space-before-function-paren": 0,
-    "space-unary-ops": 0
+    "space-unary-ops": 0,
+    "no-shadow": 0,
+    "no-plusplus": 0,
+    "no-param-reassign": 0
   }
 }
