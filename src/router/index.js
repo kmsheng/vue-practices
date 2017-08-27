@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Hello from '@/components/Hello';
+import PageHome from '@/components/PageHome';
 import PageTodoList from '@/components/PageTodoList';
 import PageCounter from '@/components/PageCounter';
 
@@ -11,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello,
+      name: 'PageHome',
+      component: PageHome,
     },
     {
       path: '/todo-list',
