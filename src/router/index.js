@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import PageHome from '@/components/PageHome';
-import PageTodoList from '@/components/PageTodoList';
-import PageCounter from '@/components/PageCounter';
+import PageHome from '@/containers/PageHome';
+import PageTodoList from '@/containers/PageTodoList';
+import PageCounter from '@/containers/PageCounter';
 
 Vue.use(Router);
 
