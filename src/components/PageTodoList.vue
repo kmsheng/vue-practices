@@ -6,7 +6,7 @@
       <input type="text" v-model="todoMessage" />
     </form>
     <ul v-show="isTodoListVisible">
-      <li v-for="todo in todos">{{todo.message | toUpperCase}}</li>
+      <li v-for="todo in todos">{{todo.message | toUpperCase | lastLetterToLowerCase}}</li>
     </ul>
   </div>
 </template>
@@ -26,8 +26,11 @@ export default {
     };
   },
   filters: {
-    toUpperCase(value) {
-      return (value || '').toUpperCase();
+    toUpperCase(value = '') {
+      return value.toUpperCase();
+    },
+    lastLetterToLowerCase(value = '') {
+      return value.slice(0, value.length - 2) + value.charAt(value.length - 1).toLowerCase();
     }
   },
   methods: {
