@@ -6,7 +6,7 @@
       <input type="text" v-model="todoMessage" />
     </form>
     <ul v-show="isTodoListVisible">
-      <li v-for="todo in todos">{{todo.message}}</li>
+      <li v-for="todo in todos">{{todo.message | toUpperCase}}</li>
     </ul>
   </div>
 </template>
@@ -24,6 +24,11 @@ export default {
         {message: 'Bar'}
       ]
     };
+  },
+  filters: {
+    toUpperCase(value) {
+      return (value || '').toUpperCase();
+    }
   },
   methods: {
     addTodo() {
