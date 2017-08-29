@@ -3,7 +3,7 @@
     <h1>Page Counter</h1>
     <button v-on:click="add()">add</button>
     <button v-on:click="minus()">minus</button>
-    <div>sign: {{sign}}</div>
+    <div :class="sign">sign: {{sign}}</div>
     <div>{{$store.state.count}}</div>
   </div>
 </template>
@@ -24,4 +24,10 @@ export default {
 </script>
 
 <style scoped>
+  .positive {
+    background-color: #0f0;
+  }
+  .negative {
+    background-color: #f00;
+  }
 </style>
